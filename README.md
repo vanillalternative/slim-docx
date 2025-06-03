@@ -74,7 +74,9 @@ Download the latest release from [GitHub Releases](https://github.com/vanillalte
 3. **Choose save location** when prompted
 4. **Done!** Your compressed file is saved with "- compressed" suffix
 
-📺 **[Watch Video Tutorial](docs/guides/how-to-use.html)** | 📖 **[Complete User Guide](docs/guides/how-to-use.md)**
+📺 **Video Tutorial** | 📖 **[Complete User Guide](docs/guides/how-to-use.md)**
+
+https://github.com/vanillalternative/slim-docx/raw/main/docs/assets/docx.mov
 
 ### What Happens During Compression
 
