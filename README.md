@@ -76,7 +76,11 @@ Download the latest release from [GitHub Releases](https://github.com/vanillalte
 
 📺 **Video Tutorial** | 📖 **[Complete User Guide](docs/guides/how-to-use.md)**
 
-https://github.com/vanillalternative/slim-docx/raw/main/docs/assets/docx.mov
+<video width="600" controls>
+  <source src="docs/assets/docx.mov" type="video/quicktime">
+  <source src="https://github.com/vanillalternative/slim-docx/raw/main/docs/assets/docx.mov" type="video/quicktime">
+  Your browser does not support the video tag. [Watch here](https://github.com/vanillalternative/slim-docx/raw/main/docs/assets/docx.mov)
+</video>
 
 ### What Happens During Compression
 
