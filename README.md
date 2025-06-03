@@ -46,7 +46,7 @@ brew install slim-docx
 ```
 
 ### Manual Download
-Download the latest release from [GitHub Releases](https://github.com/yourusername/slim-docx/releases)
+Download the latest release from [GitHub Releases](https://github.com/vanillalternative/slim-docx/releases)
 
 ### Requirements
 - macOS 11.0 (Big Sur) or later
@@ -55,7 +55,7 @@ Download the latest release from [GitHub Releases](https://github.com/youruserna
 ### Build from Source
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/SlimDocx.git
+   git clone https://github.com/vanillalternative/slim-docx.git
    cd SlimDocx
    ```
 
@@ -211,8 +211,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/SlimDocx/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/SlimDocx/discussions)
+- **Issues**: [GitHub Issues](https://github.com/vanillalternative/slim-docx/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/vanillalternative/slim-docx/discussions)
 - **Email**: support@slimdocx.com
 
 ---

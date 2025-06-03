@@ -12,7 +12,7 @@
    ```
 
 2. **Create GitHub Release:**
-   - Go to: https://github.com/YOURUSERNAME/slim-docx/releases/new
+   - Go to: https://github.com/vanillalternative/slim-docx/releases/new
    - Tag: `v1.0.0`
    - Title: `SlimDocx v1.0.0`
    - Description: Copy from release notes below
@@ -25,7 +25,7 @@
 
 4. **Update Homebrew formula:**
    - Replace `REPLACE_WITH_ACTUAL_SHA256` in `slim-docx.rb`
-   - Replace `YOURUSERNAME` with your GitHub username
+   - Replace `vanillalternative` with your GitHub username (already done)
 
 ## Homebrew Submission Steps
 
@@ -35,7 +35,7 @@
 
 2. **Add your cask:**
    ```bash
-   git clone https://github.com/YOURUSERNAME/homebrew-cask.git
+   git clone https://github.com/vanillalternative/homebrew-cask.git
    cd homebrew-cask
    cp ../slim-docx/slim-docx.rb Casks/
    git add Casks/slim-docx.rb
@@ -85,7 +85,7 @@ Download and extract `SlimDocx_Universal_v1.0.zip`, then drag to Applications fo
 - First launch may require security approval (normal for unsigned apps)
 - Minor font spacing differences due to system font replacement
 
-See full documentation at: https://github.com/YOURUSERNAME/slim-docx
+See full documentation at: https://github.com/vanillalternative/slim-docx
 ```
 
 ## After Release
