@@ -1,0 +1,35 @@
+title: SlimDocx
+description: Compress DOCX files by up to 99% on macOS
+url: https://vanillalternative.github.io/slim-docx
+baseurl: ""
+
+# GitHub Pages settings
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# SEO
+author: vanillalternative
+twitter:
+  username: vanillalternative
+  card: summary_large_image
+
+# Site settings
+show_downloads: true
+google_analytics: # Add your GA tracking ID here if needed
+
+# Navigation
+header_pages:
+  - guides/how-to-use.md
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - build_for_distribution.sh
+  - SlimDocx.xcodeproj/
+  - SlimDocx/
+  - dist/
+  - slim-docx.rb
+  - RELEASE_CHECKLIST.md

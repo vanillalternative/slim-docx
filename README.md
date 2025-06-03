@@ -68,11 +68,13 @@ Download the latest release from [GitHub Releases](https://github.com/vanillalte
 
 ## 📱 Usage
 
-### Simple Drag & Drop
+### Quick Start
 1. **Launch SlimDocx**
 2. **Drag DOCX files** onto the drop zone
 3. **Choose save location** when prompted
 4. **Done!** Your compressed file is saved with "- compressed" suffix
+
+📺 **[Watch Video Tutorial](docs/guides/how-to-use.html)** | 📖 **[Complete User Guide](docs/guides/how-to-use.md)**
 
 ### What Happens During Compression
 
@@ -211,9 +213,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
+- **Website**: [vanillalternative.github.io/slim-docx](https://vanillalternative.github.io/slim-docx)
+- **User Guide**: [Complete How-To Guide](docs/guides/how-to-use.md)
 - **Issues**: [GitHub Issues](https://github.com/vanillalternative/slim-docx/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/vanillalternative/slim-docx/discussions)
-- **Email**: support@slimdocx.com
 
 ---
 
