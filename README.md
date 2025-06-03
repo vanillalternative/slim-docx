@@ -215,7 +215,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Website**: [vanillalternative.github.io/slim-docx](https://vanillalternative.github.io/slim-docx)
 - **User Guide**: [Complete How-To Guide](docs/guides/how-to-use.md)
-- **Issues**: [GitHub Issues](https://github.com/vanillalternative/slim-docx/issues)
+- **Issues & Support**: [GitHub Issues](https://github.com/vanillalternative/slim-docx/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/vanillalternative/slim-docx/discussions)
 
 ---

@@ -111,7 +111,7 @@ During compression, you'll see detailed logging:
 - Go to Security & Privacy settings to allow the app
 
 ### Getting Help:
-- Check the [GitHub Issues](https://github.com/vanillalternative/slim-docx/issues)
+- Open a [GitHub Issue](https://github.com/vanillalternative/slim-docx/issues/new) for support
 - View console logs for detailed error messages
 - Report bugs with sample files (remove sensitive content)
 
