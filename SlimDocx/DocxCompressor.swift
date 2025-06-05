@@ -2,7 +2,7 @@ import Foundation
 import ImageIO
 import AppKit
 
-func compressDocxFile(at fileURL: URL) -> Bool {
+func compressDocxFile(at fileURL: URL) async -> Bool {
     print("🔄 Starting compression for: \(fileURL.lastPathComponent)")
     let fileManager = FileManager.default
     let tempDir = fileManager.temporaryDirectory.appendingPathComponent(UUID().uuidString)
@@ -16,7 +16,7 @@ func compressDocxFile(at fileURL: URL) -> Bool {
         try fileManager.createDirectory(at: extractDir, withIntermediateDirectories: true)
         
         print("📦 Extracting DOCX...")
-        guard extractDocx(from: fileURL, to: extractDir) else {
+        guard await extractDocx(from: fileURL, to: extractDir) else {
             print("❌ Failed to extract DOCX")
             return false
         }
@@ -46,7 +46,7 @@ func compressDocxFile(at fileURL: URL) -> Bool {
         
         let tempCompressedURL = tempDir.appendingPathComponent("compressed.docx")
         print("📦 Repackaging DOCX...")
-        guard repackageDocx(from: extractDir, to: tempCompressedURL) else {
+        guard await repackageDocx(from: extractDir, to: tempCompressedURL) else {
             print("❌ Failed to repackage DOCX")
             return false
         }
@@ -58,10 +58,7 @@ func compressDocxFile(at fileURL: URL) -> Bool {
         print("📊 Original size: \(originalSize) bytes, Compressed size: \(compressedSize) bytes")
         
         // Save the file using a save panel on the main thread
-        var saveSuccess = false
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        DispatchQueue.main.async {
+        let saveSuccess = await MainActor.run {
             let savePanel = NSSavePanel()
             let originalName = fileURL.deletingPathExtension().lastPathComponent
             savePanel.nameFieldStringValue = "\(originalName) - compressed.docx"
@@ -77,19 +74,16 @@ func compressDocxFile(at fileURL: URL) -> Bool {
                     }
                     try fileManager.moveItem(at: tempCompressedURL, to: selectedURL)
                     print("✅ Compressed file saved successfully")
-                    saveSuccess = true
+                    return true
                 } catch {
                     print("❌ Error saving file: \(error)")
-                    saveSuccess = false
+                    return false
                 }
             } else {
                 print("❌ User cancelled save")
-                saveSuccess = false
+                return false
             }
-            semaphore.signal()
         }
-        
-        semaphore.wait()
         
         if !saveSuccess {
             return false
@@ -108,7 +102,7 @@ func compressDocxFile(at fileURL: URL) -> Bool {
     }
 }
 
-private func extractDocx(from sourceURL: URL, to destinationURL: URL) -> Bool {
+private func extractDocx(from sourceURL: URL, to destinationURL: URL) async -> Bool {
     print("📦 Running unzip command...")
     let process = Process()
     process.executableURL = URL(fileURLWithPath: "/usr/bin/unzip")
@@ -121,7 +115,11 @@ private func extractDocx(from sourceURL: URL, to destinationURL: URL) -> Bool {
     
     do {
         try process.run()
-        process.waitUntilExit()
+        await withCheckedContinuation { continuation in
+            process.terminationHandler = { _ in
+                continuation.resume()
+            }
+        }
         
         let errorData = pipe.fileHandleForReading.readDataToEndOfFile()
         if !errorData.isEmpty, let errorString = String(data: errorData, encoding: .utf8) {
@@ -136,7 +134,7 @@ private func extractDocx(from sourceURL: URL, to destinationURL: URL) -> Bool {
     }
 }
 
-private func repackageDocx(from sourceDir: URL, to destinationURL: URL) -> Bool {
+private func repackageDocx(from sourceDir: URL, to destinationURL: URL) async -> Bool {
     print("📦 Running zip command...")
     let process = Process()
     process.executableURL = URL(fileURLWithPath: "/usr/bin/zip")
@@ -150,7 +148,11 @@ private func repackageDocx(from sourceDir: URL, to destinationURL: URL) -> Bool 
     
     do {
         try process.run()
-        process.waitUntilExit()
+        await withCheckedContinuation { continuation in
+            process.terminationHandler = { _ in
+                continuation.resume()
+            }
+        }
         
         let errorData = pipe.fileHandleForReading.readDataToEndOfFile()
         if !errorData.isEmpty, let errorString = String(data: errorData, encoding: .utf8) {

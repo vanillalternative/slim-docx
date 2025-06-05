@@ -70,10 +70,10 @@ struct ContentView: View {
     private func processDocxFile(at url: URL) {
         updateStatus("Processing \(url.lastPathComponent)...")
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let success = compressDocxFile(at: url)
+        Task {
+            let success = await compressDocxFile(at: url)
             
-            DispatchQueue.main.async {
+            await MainActor.run {
                 isProcessing = false
                 
                 if success {
@@ -108,23 +108,35 @@ struct DropZoneView: View {
     }
     
     private func handleDrop(providers: [NSItemProvider]) -> Bool {
-        let dispatchGroup = DispatchGroup()
-        var urls: [URL] = []
-        
-        for provider in providers {
-            dispatchGroup.enter()
-            provider.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, error in
-                defer { dispatchGroup.leave() }
+        Task {
+            var urls: [URL] = []
+            
+            await withTaskGroup(of: URL?.self) { group in
+                for provider in providers {
+                    group.addTask {
+                        await withCheckedContinuation { continuation in
+                            provider.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, error in
+                                if let data = item as? Data,
+                                   let url = URL(dataRepresentation: data, relativeTo: nil) {
+                                    continuation.resume(returning: url)
+                                } else {
+                                    continuation.resume(returning: nil)
+                                }
+                            }
+                        }
+                    }
+                }
                 
-                if let data = item as? Data,
-                   let url = URL(dataRepresentation: data, relativeTo: nil) {
-                    urls.append(url)
+                for await result in group {
+                    if let url = result {
+                        urls.append(url)
+                    }
                 }
             }
-        }
-        
-        dispatchGroup.notify(queue: .main) {
-            onDrop(urls)
+            
+            await MainActor.run {
+                onDrop(urls)
+            }
         }
         
         return true
