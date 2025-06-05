@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B1A2A1A2B1A2A1A2B1A2A1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A2A192B1A2A1A2B1A2A1A /* AppDelegate.swift */; };
-		8B1A2A1C2B1A2A1A2B1A2A1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A2A1B2B1A2A1A2B1A2A1A /* ViewController.swift */; };
-		8B1A2A1F2B1A2A1A2B1A2A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A2A1D2B1A2A1A2B1A2A1A /* Main.storyboard */; };
+		8B1A2A2B2B1A2A1A2B1A2A1A /* SlimDocxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A2A2C2B1A2A1A2B1A2A1A /* SlimDocxApp.swift */; };
+		8B1A2A2D2B1A2A1A2B1A2A1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A2A2E2B1A2A1A2B1A2A1A /* ContentView.swift */; };
+		8B1A2A2F2B1A2A1A2B1A2A1A /* DocxCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A2A302B1A2A1A2B1A2A1A /* DocxCompressor.swift */; };
 		8B1A2A212B1A2A1A2B1A2A1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A2A202B1A2A1A2B1A2A1A /* Assets.xcassets */; };
-		8B1A2A242B1A2A1A2B1A2A1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A2A222B1A2A1A2B1A2A1A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B1A2A162B1A2A1A2B1A2A1A /* SlimDocx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlimDocx.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B1A2A192B1A2A1A2B1A2A1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B1A2A1B2B1A2A1A2B1A2A1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8B1A2A1E2B1A2A1A2B1A2A1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B1A2A202B1A2A1A2B1A2A1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B1A2A232B1A2A1A2B1A2A1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B1A2A252B1A2A1A2B1A2A1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B1A2A2C2B1A2A1A2B1A2A1A /* SlimDocxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlimDocxApp.swift; sourceTree = "<group>"; };
+		8B1A2A2E2B1A2A1A2B1A2A1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B1A2A302B1A2A1A2B1A2A1A /* DocxCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocxCompressor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +52,10 @@
 		8B1A2A182B1A2A1A2B1A2A1A /* SlimDocx */ = {
 			isa = PBXGroup;
 			children = (
-				8B1A2A192B1A2A1A2B1A2A1A /* AppDelegate.swift */,
-				8B1A2A1B2B1A2A1A2B1A2A1A /* ViewController.swift */,
-				8B1A2A1D2B1A2A1A2B1A2A1A /* Main.storyboard */,
+				8B1A2A2C2B1A2A1A2B1A2A1A /* SlimDocxApp.swift */,
+				8B1A2A2E2B1A2A1A2B1A2A1A /* ContentView.swift */,
+				8B1A2A302B1A2A1A2B1A2A1A /* DocxCompressor.swift */,
 				8B1A2A202B1A2A1A2B1A2A1A /* Assets.xcassets */,
-				8B1A2A222B1A2A1A2B1A2A1A /* LaunchScreen.storyboard */,
 				8B1A2A252B1A2A1A2B1A2A1A /* Info.plist */,
 			);
 			path = SlimDocx;
@@ -122,9 +119,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B1A2A242B1A2A1A2B1A2A1A /* LaunchScreen.storyboard in Resources */,
 				8B1A2A212B1A2A1A2B1A2A1A /* Assets.xcassets in Resources */,
-				8B1A2A1F2B1A2A1A2B1A2A1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,30 +130,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B1A2A1C2B1A2A1A2B1A2A1A /* ViewController.swift in Sources */,
-				8B1A2A1A2B1A2A1A2B1A2A1A /* AppDelegate.swift in Sources */,
+				8B1A2A2B2B1A2A1A2B1A2A1A /* SlimDocxApp.swift in Sources */,
+				8B1A2A2D2B1A2A1A2B1A2A1A /* ContentView.swift in Sources */,
+				8B1A2A2F2B1A2A1A2B1A2A1A /* DocxCompressor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		8B1A2A1D2B1A2A1A2B1A2A1A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B1A2A1E2B1A2A1A2B1A2A1A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8B1A2A222B1A2A1A2B1A2A1A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B1A2A232B1A2A1A2B1A2A1A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -298,7 +277,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SlimDocx/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,7 +306,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SlimDocx/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
